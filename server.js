@@ -11,3 +11,7 @@ var session = require('express-session')
 const passport = require('passport');
 const passportLocalMongoose = require('passport-local-mongoose');
 const app = express();
+app.set('view engine', 'ejs');
+app.use(bodyParser.urlencoded({extended: true}));
+// app.use(bodyParser.json())
+app.use(express.static("public"));
