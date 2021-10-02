@@ -19,31 +19,11 @@ const passportLocalMongoose = require('passport-local-mongoose');
 
 const Correction = mongoose.model("Correction", correctionSchema);
 
+const correctionsController = require('../controllers/correctionsController');
+
 // Post Request to store the accuracy of the label Details(predicted by the ML model)
 
 
-router.post('/posts',(req,res, next)=>{
-
-    const newCorrection = new Correction({
-        name: req.body.name,
-        username: req.body.username,
-        picture: req.body.picture,
-        label: req.body.label,
-        expectedLabel: req.body.expectedLabel,
-        accuracy: req.body.accuracy,
-        feedback: req.body.feedback,
-    })
-
-    newCorrection.save((err)=>{
-        if(err){
-            console.log(err);
-        }
-        else {
-            console.log("Successfully added the new correcion");
-        }
-    });
-
-
-})
+router.post('/posts',correctionsController.postCorrections);
 
 module.exports = router;

@@ -25,27 +25,10 @@ var session = require('express-session')
 const passport = require('passport');
 const passportLocalMongoose = require('passport-local-mongoose');
 
+const signUpcontroller = require('../controllers/signUpcontroller')
+
 // Post Request to store user Details
 
-router.post('/signUp',(req,res, next)=>{
-
-    const newUser = new User({
-        name: req.body.name,
-        username: req.body.username,
-        password: md5(req.body.password),
-        email: req.body.email,
-    })
-
-    newUser.save((err)=>{
-        if(err){
-            console.log(err);
-        }
-        else {
-            console.log("Successfully added the new user");
-        }
-    });
-
-
-})
+router.post('/signUp',signUpcontroller.postUser)
 
 module.exports = router;
