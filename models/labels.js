@@ -8,7 +8,7 @@ const p = path.join(
 );
 
 const mongoose = require("mongoose");
-
+const {Schema} = mongoose;
 const labelSchema = new Schema(
     {
         name:{ type:'string', required: true},
