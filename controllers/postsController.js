@@ -2,9 +2,15 @@ const path = require('path');
 
 const express = require('express');
 
+const mongoose = require("mongoose");
+
 const rootDir = require('../util/path');
 
 const router = express.Router();
+
+const labelSchema = require('../models/label')
+
+const Label = mongoose.model("Label", labelSchema);
 
 exports.postLabels = (req,res, next)=>{
 
@@ -21,6 +27,7 @@ exports.postLabels = (req,res, next)=>{
         }
         else {
             console.log("Successfully added the new label");
+            res.send("Successfully added the new label");
         }
     });
 

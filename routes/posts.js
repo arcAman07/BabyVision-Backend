@@ -20,7 +20,7 @@ const postsController = require('../controllers/postsController');
 const mongoose = require("mongoose");
 // const {Schema} = mongoose;
 
-const Label = mongoose.model("Label", labelSchema);
+// const Label = mongoose.model("Label", labelSchema);
 
 // Post Request to store label Details(predictions by the ML model)
 

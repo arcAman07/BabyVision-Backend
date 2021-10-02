@@ -2,7 +2,13 @@ const path = require('path');
 
 const express = require('express');
 
+const mongoose = require("mongoose");
+
 const rootDir = require('../util/path');
+
+const correctionSchema = require('../models/labelCorrection');
+
+const Correction = mongoose.model("Correction", correctionSchema);
 
 const router = express.Router();
 
@@ -23,7 +29,8 @@ exports.postCorrections = (req,res, next)=>{
             console.log(err);
         }
         else {
-            console.log("Successfully added the new correcion");
+            console.log("Successfully added the new correction");
+            res.send("Successfully added the new correction");
         }
     });
 

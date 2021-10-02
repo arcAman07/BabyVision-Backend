@@ -6,7 +6,7 @@ const rootDir = require('../util/path');
 
 const router = express.Router();
 
-const userSchema = require('../models/user');
+// const userSchema = require('../models/user');
 
 const mongoose = require("mongoose");
 // const {Schema} = mongoose;
@@ -18,7 +18,7 @@ const mongoose = require("mongoose");
 
 // })
 
-const User = mongoose.model("User", userSchema);
+// const User = mongoose.model("User", userSchema);
 
 const mongooseFieldEncryption = require("mongoose-field-encryption").fieldEncryption;
 var md5 = require('md5');

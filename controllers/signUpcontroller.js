@@ -6,6 +6,14 @@ const rootDir = require('../util/path');
 
 const router = express.Router();
 
+var md5 = require('md5');
+
+const mongoose = require("mongoose");
+
+const userSchema = require('../models/user');
+
+const User = mongoose.model("User", userSchema);
+
 exports.postUser = (req,res, next)=>{
 
     const newUser = new User({
@@ -21,6 +29,8 @@ exports.postUser = (req,res, next)=>{
         }
         else {
             console.log("Successfully added the new user");
+            res.send("Successfully added the new user");
+           
         }
     });
 

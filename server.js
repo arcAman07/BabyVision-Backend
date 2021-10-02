@@ -17,10 +17,10 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
 const correctionRoutes = require('./routes/corrections');
-const postsRoutes = require('./require/posts');
+const postsRoutes = require('./routes/posts');
 const signUpRoutes = require('./routes/signUp');
 
-mongoose.connect("mongodb://localhost:27017/bookDB", {useNewUrlParser:true,  useUnifiedTopology: true});
+mongoose.connect("mongodb://localhost:27017/visionDB", {useNewUrlParser:true,  useUnifiedTopology: true});
 
 app.use(correctionRoutes);
 app.use(postsRoutes);

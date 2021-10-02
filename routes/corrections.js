@@ -6,7 +6,7 @@ const rootDir = require('../util/path');
 
 const router = express.Router();
 
-const correctionSchema = require('../models/labelCorrection');
+// const correctionSchema = require('../models/labelCorrection');
 
 const mongooseFieldEncryption = require("mongoose-field-encryption").fieldEncryption;
 var md5 = require('md5');
@@ -18,7 +18,7 @@ const passportLocalMongoose = require('passport-local-mongoose');
 const mongoose = require("mongoose");
 // const {Schema} = mongoose;
 
-const Correction = mongoose.model("Correction", correctionSchema);
+// const Correction = mongoose.model("Correction", correctionSchema);
 
 const correctionsController = require('../controllers/correctionsController');
 
