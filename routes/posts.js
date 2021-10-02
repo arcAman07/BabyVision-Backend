@@ -17,7 +17,8 @@ const passport = require('passport');
 const passportLocalMongoose = require('passport-local-mongoose');
 
 const postsController = require('../controllers/postsController');
-
+const mongoose = require("mongoose");
+// const {Schema} = mongoose;
 
 const Label = mongoose.model("Label", labelSchema);
 

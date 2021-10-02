@@ -8,6 +8,9 @@ const router = express.Router();
 
 const userSchema = require('../models/user');
 
+const mongoose = require("mongoose");
+// const {Schema} = mongoose;
+
 // userSchema.plugin(mongooseFieldEncryption,{
 //     fields:["password"],
 //     secret:process.env.SECRET,

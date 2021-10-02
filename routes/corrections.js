@@ -15,7 +15,8 @@ console.log(md5('message'));
 var session = require('express-session')
 const passport = require('passport');
 const passportLocalMongoose = require('passport-local-mongoose');
-
+const mongoose = require("mongoose");
+// const {Schema} = mongoose;
 
 const Correction = mongoose.model("Correction", correctionSchema);
 

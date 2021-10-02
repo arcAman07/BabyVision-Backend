@@ -16,4 +16,16 @@ app.use(bodyParser.urlencoded({extended: true}));
 // app.use(bodyParser.json())
 app.use(express.static("public"));
 
+const correctionRoutes = require('./routes/corrections');
+const postsRoutes = require('./require/posts');
+const signUpRoutes = require('./routes/signUp');
+
 mongoose.connect("mongodb://localhost:27017/bookDB", {useNewUrlParser:true,  useUnifiedTopology: true});
+
+app.use(correctionRoutes);
+app.use(postsRoutes);
+app.use(signUpRoutes);
+
+// app.use(errorController.error);
+
+app.listen(3000,()=>console.log("The server is running on port 3000"))
