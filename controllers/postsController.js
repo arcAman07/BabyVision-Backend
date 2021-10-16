@@ -1,12 +1,4 @@
-const path = require("path");
-
-const express = require("express");
-
 const mongoose = require("mongoose");
-
-const rootDir = require("../util/path");
-
-const router = express.Router();
 
 const labelSchema = require("../models/label");
 
