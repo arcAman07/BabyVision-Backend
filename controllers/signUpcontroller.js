@@ -1,11 +1,3 @@
-const path = require("path");
-
-const express = require("express");
-
-const rootDir = require("../util/path");
-
-const router = express.Router();
-
 var md5 = require("md5");
 
 const mongoose = require("mongoose");
