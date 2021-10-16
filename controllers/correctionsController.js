@@ -1,16 +1,8 @@
-const path = require("path");
-
-const express = require("express");
-
 const mongoose = require("mongoose");
-
-const rootDir = require("../util/path");
 
 const correctionSchema = require("../models/labelCorrection");
 
 const Correction = mongoose.model("Correction", correctionSchema);
-
-const router = express.Router();
 
 exports.postCorrections = (req, res, next) => {
   const newCorrection = new Correction({
