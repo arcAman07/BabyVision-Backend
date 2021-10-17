@@ -21,5 +21,3 @@ exports.postLabels = (req, res, next) => {
     }
   });
 };
-
-exports.labelModel = Label;
