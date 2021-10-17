@@ -22,7 +22,7 @@ exports.postLabels = (req, res, next) => {
   });
 };
 
-exports.getPosts = (req, res, next) => {
+exports.getLabels = (req, res, next) => {
   Label.findOne({ _id: req.params.id }, (err, label) => {
     if (!err) {
       res.send(label);
@@ -33,7 +33,7 @@ exports.getPosts = (req, res, next) => {
   });
 };
 
-exports.deletePosts = (req, res, next) => {
+exports.deleteLabels = (req, res, next) => {
   Label.deleteOne({ _id: req.params.id }, (err) => {
     if (!err) {
       console.log("Label details deleted successfully");
