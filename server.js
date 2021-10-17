@@ -17,7 +17,7 @@ const signUpRoutes = require("./routes/signUp");
 
 app.use(
   session({
-    secret: "I am a God",
+    secret: "Hello World",
     resave: false,
     saveUninitialized: false,
   })
