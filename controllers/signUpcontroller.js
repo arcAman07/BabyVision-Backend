@@ -1,8 +1,11 @@
 require("dotenv").config();
 var md5 = require("md5");
-
 const mongoose = require("mongoose");
-
+const mongooseFieldEncryption =
+  require("mongoose-field-encryption").fieldEncryption;
+var session = require("express-session");
+const passport = require("passport");
+const passportLocalMongoose = require("passport-local-mongoose");
 const userSchema = require("../models/user");
 
 const User = mongoose.model("User", userSchema);
