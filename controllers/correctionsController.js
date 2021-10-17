@@ -59,5 +59,3 @@ exports.deleteCorrections = (req, res, next) => {
     }
   });
 };
-
-exports.correctionModel = Correction;
