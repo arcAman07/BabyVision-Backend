@@ -58,5 +58,3 @@ exports.deleteUser = (req, res, next) => {
     }
   });
 };
-
-exports.userModel = User;
