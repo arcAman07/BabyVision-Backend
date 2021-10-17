@@ -1,8 +1,8 @@
-const path = require('path');
+const path = require("path");
 
-const express = require('express');
+const express = require("express");
 
-const rootDir = require('../util/path');
+const rootDir = require("../util/path");
 
 const router = express.Router();
 
@@ -19,19 +19,16 @@ const mongoose = require("mongoose");
 // })
 
 // const User = mongoose.model("User", userSchema);
-
-const mongooseFieldEncryption = require("mongoose-field-encryption").fieldEncryption;
-var md5 = require('md5');
-var bcrypt = require('bcryptjs');        
-console.log(md5('message'));
-var session = require('express-session')
-const passport = require('passport');
-const passportLocalMongoose = require('passport-local-mongoose');
-
-const signUpcontroller = require('../controllers/signUpcontroller')
+const signUpcontroller = require("../controllers/signUpcontroller");
 
 // Post Request to store user Details
 
-router.post('/signUp',signUpcontroller.postUser)
+router.post("/signUp", signUpcontroller.postUser);
+
+router.get("/signUp/:id", signUpcontroller.getUser);
+
+router.patch("/signUp/:id", signUpcontroller.patchUser);
+
+router.delete("/signUp/:id", signUpcontroller.deleteUser);
 
 module.exports = router;
