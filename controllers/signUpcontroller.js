@@ -24,4 +24,39 @@ exports.postUser = (req, res, next) => {
   });
 };
 
+exports.getUser = (req, res, next) => {
+  User.findOne({ _id: req.params.id }, (err, user) => {
+    if (!err) {
+      res.send(user);
+    } else {
+      console.log(err);
+      console.log(user);
+    }
+  });
+};
+
+exports.patchUser = (req, res, next) => {
+  User.updateOne({ _id: req.params.id }, { $set: req.body }, (err) => {
+    if (!err) {
+      console.log("User details updated successfully");
+      res.send("Successfully updated the user details");
+    } else {
+      console.log(err);
+      res.send(err);
+    }
+  });
+};
+
+exports.deleteUser = (req, res, next) => {
+  User.deleteOne({ _id: req.params.id }, (err) => {
+    if (!err) {
+      console.log("User details deleted successfully");
+      res.send("Successfully deleted the user details");
+    } else {
+      console.log(err);
+      res.send(err);
+    }
+  });
+};
+
 exports.userModel = User;
