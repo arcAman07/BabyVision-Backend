@@ -15,6 +15,18 @@ const correctionRoutes = require("./routes/corrections");
 const postsRoutes = require("./routes/posts");
 const signUpRoutes = require("./routes/signUp");
 
+app.use(
+  session({
+    secret: "I am a God",
+    resave: false,
+    saveUninitialized: false,
+  })
+);
+
+app.use(passport.initialize());
+
+app.use(passport.session());
+
 mongoose.connect("mongodb://localhost:27017/visionDB", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
