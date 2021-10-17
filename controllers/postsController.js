@@ -21,3 +21,26 @@ exports.postLabels = (req, res, next) => {
     }
   });
 };
+
+exports.getPosts = (req, res, next) => {
+  Label.findOne({ _id: req.params.id }, (err, label) => {
+    if (!err) {
+      res.send(label);
+    } else {
+      console.log(err);
+      console.log(label);
+    }
+  });
+};
+
+exports.deletePosts = (req, res, next) => {
+  Label.deleteOne({ _id: req.params.id }, (err) => {
+    if (!err) {
+      console.log("Label details deleted successfully");
+      res.send("Successfully deleted the label details");
+    } else {
+      console.log(err);
+      res.send(err);
+    }
+  });
+};
