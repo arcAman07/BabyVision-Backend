@@ -25,4 +25,39 @@ exports.postCorrections = (req, res, next) => {
   });
 };
 
+exports.getCorrections = (req, res, next) => {
+  Correction.findOne({ _id: req.params.id }, (err, correction) => {
+    if (!err) {
+      res.send(correction);
+    } else {
+      console.log(err);
+      console.log(correction);
+    }
+  });
+};
+
+exports.patchCorrections = (req, res, next) => {
+  Correction.updateOne({ _id: req.params.id }, { $set: req.body }, (err) => {
+    if (!err) {
+      console.log("Correction details updated successfully");
+      res.send("Successfully updated the correction details");
+    } else {
+      console.log(err);
+      res.send(err);
+    }
+  });
+};
+
+exports.deleteCorrections = (req, res, next) => {
+  Correction.deleteOne({ _id: req.params.id }, (err) => {
+    if (!err) {
+      console.log("Correction details deleted successfully");
+      res.send("Successfully deleted the correction details");
+    } else {
+      console.log(err);
+      res.send(err);
+    }
+  });
+};
+
 exports.correctionModel = Correction;
