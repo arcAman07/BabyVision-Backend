@@ -1,30 +1,36 @@
-const path = require('path');
+const path = require("path");
 
-const express = require('express');
+const express = require("express");
 
-const rootDir = require('../util/path');
+const rootDir = require("../util/path");
 
 const router = express.Router();
 
 // const correctionSchema = require('../models/labelCorrection');
 
-const mongooseFieldEncryption = require("mongoose-field-encryption").fieldEncryption;
-var md5 = require('md5');
-var bcrypt = require('bcryptjs');        
-console.log(md5('message'));
-var session = require('express-session')
-const passport = require('passport');
-const passportLocalMongoose = require('passport-local-mongoose');
+const mongooseFieldEncryption =
+  require("mongoose-field-encryption").fieldEncryption;
+var md5 = require("md5");
+var bcrypt = require("bcryptjs");
+console.log(md5("message"));
+var session = require("express-session");
+const passport = require("passport");
+const passportLocalMongoose = require("passport-local-mongoose");
 const mongoose = require("mongoose");
 // const {Schema} = mongoose;
 
 // const Correction = mongoose.model("Correction", correctionSchema);
 
-const correctionsController = require('../controllers/correctionsController');
+const correctionsController = require("../controllers/correctionsController");
 
 // Post Request to store the accuracy of the label Details(predicted by the ML model)
 
+router.post("/corrections", correctionsController.postCorrections);
 
-router.post('/posts',correctionsController.postCorrections);
+router.get("/corrections:id", correctionsController.getCorrections);
+
+router.patch("/corrections:id", correctionsController.patchCorrections);
+
+router.delete("/corrections:id", correctionsController.deleteCorrections);
 
 module.exports = router;
