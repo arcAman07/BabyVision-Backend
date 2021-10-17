@@ -1,3 +1,4 @@
+require("dotenv").config();
 var md5 = require("md5");
 
 const mongoose = require("mongoose");
