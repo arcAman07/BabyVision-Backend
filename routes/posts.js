@@ -6,7 +6,7 @@ const postsController = require("../controllers/postsController");
 
 // Post Request to store label Details(predictions by the ML model)
 
-router.get("/signUp", postsController.getAllLabels);
+router.get("/posts", postsController.getAllLabels);
 
 router.post("/posts", postsController.postLabels);
 
