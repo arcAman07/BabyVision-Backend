@@ -48,6 +48,17 @@ exports.patchCorrections = (req, res, next) => {
   });
 };
 
+exports.getAllCorrections = (req, res, next) => {
+  Correction.find((err, results) => {
+    if (!err) {
+      res.send(results);
+    } else {
+      console.log(err);
+      res.send(err);
+    }
+  });
+};
+
 exports.deleteCorrections = (req, res, next) => {
   Correction.deleteOne({ _id: req.params.id }, (err) => {
     if (!err) {
