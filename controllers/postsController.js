@@ -33,6 +33,17 @@ exports.getLabels = (req, res, next) => {
   });
 };
 
+exports.getAllLabels = (req, res, next) => {
+  Label.find((err, results) => {
+    if (!err) {
+      res.send(results);
+    } else {
+      console.log(err);
+      res.send(err);
+    }
+  });
+};
+
 exports.deleteLabels = (req, res, next) => {
   Label.deleteOne({ _id: req.params.id }, (err) => {
     if (!err) {
