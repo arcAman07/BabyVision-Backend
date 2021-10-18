@@ -6,6 +6,8 @@ const correctionsController = require("../controllers/correctionsController");
 
 // Post Request to store the accuracy of the label Details(predicted by the ML model)
 
+router.get("/corrections", correctionsController.getAllCorrections);
+
 router.post("/corrections", correctionsController.postCorrections);
 
 router.get("/corrections:id", correctionsController.getCorrections);
