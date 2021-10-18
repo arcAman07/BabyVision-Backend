@@ -27,6 +27,30 @@ exports.postUser = (req, res, next) => {
   });
 };
 
+exports.authenticateUser = (req, res, next) => {
+  const email = req.body.email;
+  const password = req.body.password;
+
+  User.findOne({ email: email }, (err, foundUser) => {
+    if (err) {
+      console.log(err);
+    } else {
+      if (foundUser) {
+        if (foundUser.password === password) {
+          console.log("User authenticated");
+          res.send("User authenticated");
+        } else {
+          console.log("Incorrect password");
+          res.send("Incorrect password");
+        }
+      } else {
+        console.log("User not Found!");
+        res.send("User Not found!");
+      }
+    }
+  });
+};
+
 exports.getUser = (req, res, next) => {
   User.findOne({ _id: req.params.id }, (err, user) => {
     if (!err) {
