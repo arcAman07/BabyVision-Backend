@@ -50,13 +50,16 @@ exports.authenticateUser = (req, res, next) => {
       console.log(err);
     } else {
       if (foundUser) {
-        if (foundUser.password === password) {
-          console.log("User authenticated");
-          res.send("User authenticated");
-        } else {
-          console.log("Incorrect password");
-          res.send("Incorrect password");
-        }
+        bcrypt.compare(password, foundUser.password, (err, result) => {
+          if (result == true) {
+            console.log("User authenticated");
+            res.send("User authenticated");
+          } else {
+            res.send("Incorrect Password");
+            console.log(err);
+            console.log(result);
+          }
+        });
       } else {
         console.log("User not Found!");
         res.send("User Not found!");
