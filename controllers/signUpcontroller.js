@@ -27,6 +27,17 @@ exports.postUser = (req, res, next) => {
   });
 };
 
+exports.getAllUsers = (req, res, next) => {
+  User.find((err, results) => {
+    if (!err) {
+      res.send(results);
+    } else {
+      console.log(err);
+      res.send(err);
+    }
+  });
+};
+
 exports.authenticateUser = (req, res, next) => {
   const email = req.body.email;
   const password = req.body.password;
