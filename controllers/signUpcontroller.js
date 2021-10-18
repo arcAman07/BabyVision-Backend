@@ -16,6 +16,7 @@ exports.postUser = (req, res, next) => {
       newUser.save((err) => {
         if (err) {
           console.log(err);
+          res.send(err);
         } else {
           console.log("Successfully added the new user");
           res.send("Successfully added the new user");
@@ -23,6 +24,7 @@ exports.postUser = (req, res, next) => {
       });
     } else {
       console.log(error);
+      res.send(error);
     }
   });
 };
