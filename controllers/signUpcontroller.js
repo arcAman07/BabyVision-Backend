@@ -3,9 +3,10 @@ var bcrypt = require("bcryptjs");
 const mongoose = require("mongoose");
 const userSchema = require("../models/user");
 const User = mongoose.model("User", userSchema);
+const saltRounds = 10;
 
 exports.postUser = (req, res, next) => {
-  bcrypt.hash(req.body.password, salt, (error, hash) => {
+  bcrypt.hash(req.body.password, saltRounds, (error, hash) => {
     if (!error) {
       const newUser = new User({
         name: req.body.name,
