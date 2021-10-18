@@ -31,4 +31,6 @@ router.patch("/signUp/:id", signUpcontroller.patchUser);
 
 router.delete("/signUp/:id", signUpcontroller.deleteUser);
 
+router.get("signUp/authenticate", signUpcontroller.authenticateUser);
+
 module.exports = router;
