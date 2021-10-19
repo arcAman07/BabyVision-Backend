@@ -3,7 +3,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT;
 app.use(bodyParser.urlencoded({ extended: true }));
 // app.use(bodyParser.json())
 
@@ -20,4 +20,4 @@ app.use(correctionRoutes);
 app.use(postsRoutes);
 app.use(signUpRoutes);
 
-app.listen(3000, () => console.log("The server is running on port 3000"));
+app.listen(PORT, () => console.log("The server is running"));
