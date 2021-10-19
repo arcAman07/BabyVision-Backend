@@ -10,10 +10,10 @@ router.get("/corrections", correctionsController.getAllCorrections);
 
 router.post("/corrections", correctionsController.postCorrections);
 
-router.get("/corrections:id", correctionsController.getCorrections);
+router.get("/corrections/:id", correctionsController.getCorrections);
 
-router.patch("/corrections:id", correctionsController.patchCorrections);
+router.patch("/corrections/:id", correctionsController.patchCorrections);
 
-router.delete("/corrections:id", correctionsController.deleteCorrections);
+router.delete("/corrections/:id", correctionsController.deleteCorrections);
 
 module.exports = router;
