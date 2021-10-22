@@ -7,4 +7,4 @@ This code sample is basically the backend (server side code) of the Android Nati
 2) Storing Labels: As soon as the model predicts the image either for landmark or  object detection these details are stored in the database to study user images and its classification (CRUD routes have been set). This is important as based on more user activity we will improve our ML model as we will get more training and testing data.We store user details along with the picture( URL ) and label in the collection of the database. This is important as it will help us study user images.
 4) User feedback: After model prediction , user will fill the feedback form so that we can improve the ML model and it is stored in the database. ( CRUD routes have been set here again). This basically stores the user feedback on the model results, so that the ML model can be enhanced and provide better results.
 
-Entire Project Out
+Entire Project Out Soon!
