@@ -29,6 +29,6 @@
     "md5": "^2.3.0",
     "mongoose": "^6.0.8",
     "mongoose-field-encryption": "^4.0.3",
-    "nodemon": "^2.0.13"
+    "nodemon": "^2.0.20"
 }
 }
